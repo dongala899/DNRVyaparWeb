@@ -245,26 +245,11 @@ h4 { font-size: var(--font-size-lg); }
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--spacing-2);
 }
 
-.logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
+.logo-img {
     height: 40px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 800;
-    font-size: var(--font-size-sm);
-    border-radius: var(--border-radius);
-}
-
-.logo-text {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--color-gray-900);
+    width: auto;
 }
 
 .nav-links {
@@ -1057,8 +1042,8 @@ h4 { font-size: var(--font-size-lg); }
     max-width: 300px;
 }
 
-.footer-brand .logo-text {
-    color: var(--color-white);
+.footer-brand .logo-img {
+    filter: brightness(0) invert(1);
 }
 
 .social-links {
