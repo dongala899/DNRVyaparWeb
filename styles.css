@@ -1111,7 +1111,13 @@ h4 { font-size: var(--font-size-lg); }
         gap: var(--spacing-8);
     }
     
-    .footer-bottom {
+.footer-email {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-light);
+    cursor: default;
+}
+
+.footer-bottom {
         flex-direction: column;
         gap: var(--spacing-2);
         text-align: center;
