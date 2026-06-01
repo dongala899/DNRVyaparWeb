@@ -73,9 +73,9 @@
                     var d = new Date(data.published_at);
                     info.textContent = ver + ' \u2022 Updated ' + d.toLocaleString('en-US', { month: 'long' }) + ' ' + d.getFullYear();
                 }
-                var faq = document.querySelector('.faq-item:first-child .faq-a p');
-                if (faq) {
-                    faq.textContent = ver + ' is the current release. We recommend always updating to the latest version for new features and bug fixes.';
+                var faqVer = document.getElementById('faq-version');
+                if (faqVer) {
+                    faqVer.textContent = ver + ' is the current release. We recommend always updating to the latest version for new features and bug fixes.';
                 }
             }
         })
