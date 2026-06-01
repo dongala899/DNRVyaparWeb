@@ -625,7 +625,38 @@
             </div>
         </div>
     </footer>
-
     <script src='script.js'></script>
+    <script>
+    (function() {
+        fetch('https://api.github.com/repos/dongala899/DNRVyaparWeb/releases/latest')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var asset = data.assets && data.assets.find(function(a) { return a.name.endsWith('.exe'); });
+                if (asset) {
+                    var btn = document.getElementById('download-btn');
+                    if (btn) {
+                        btn.href = asset.browser_download_url;
+                        btn.download = '';
+                    }
+                }
+                var ver = data.tag_name || '';
+                if (ver) {
+                    var info = document.querySelector('.download-info p');
+                    if (info) {
+                        var date = new Date(data.published_at);
+                        var month = date.toLocaleString('en-US', { month: 'long' });
+                        var year = date.getFullYear();
+                        info.textContent = ver + ' \u2022 Updated ' + month + ' ' + year;
+                    }
+                    var faq = document.querySelector('.faq-item:nth-child(1) p');
+                    if (faq) {
+                        faq.textContent = ver + ' is the current release. We recommend always updating to the latest version for new features and bug fixes.';
+                    }
+                }
+            })
+            .catch(function() {});
+    })();
+    </script>
+
 </body>
 </html>
